@@ -1,0 +1,202 @@
+.formImage {
+  flex: 1;
+  border-radius: var(--pixel-16);
+  height: var(--pixel-550);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--pixel-350);
+}
+
+@media (max-width: 604px) {
+  .formImage {
+    height: 122px;
+  }
+}
+
+.formSubtitleText,
+.formTitleText {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: var(--font-xlarge);
+  font-weight: 700;
+  font-family: var(--font-inter);
+  color: var(--theme-blue);
+  text-align: center;
+}
+
+.formSubtitleText {
+  font-size: var(--font-medium);
+  font-weight: 600;
+  font-family: var(--font-sand);
+  color: var(--theme-bluedark);
+}
+
+.formHead {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-5);
+}
+
+.formBody,
+.formBodyWrap {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.formBody {
+  overflow: hidden;
+  flex-shrink: 0;
+  padding: 1px;
+  gap: var(--gap-10);
+}
+
+.formBodyWrap {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.formBodyWrap::-webkit-scrollbar {
+  width: 7px;
+}
+
+.formBodyWrap::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.formBodyWrap::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 5px;
+}
+
+.formContent,
+.formFooter {
+  display: flex;
+  align-items: center;
+}
+
+.formFooter {
+  align-self: stretch;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--gap-10);
+  padding: 1px;
+}
+
+.formContent {
+  margin: 0;
+  flex: 1;
+  height: var(--pixel-550);
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--gap-30);
+  min-width: var(--pixel-350);
+  animation-name: moveOutToLeft;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.formContent.moveLeft {
+  animation-name: moveInFromLeft;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.formContent.moveRight {
+  animation-name: moveInFromRight;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes moveInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveOutToLeft {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+}
+
+.form,
+.formSection,
+.preorder {
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  flex: 1;
+  border-radius: var(--pixel-36);
+  background-color: var(--theme-white);
+  overflow: hidden;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding: var(--padd-30);
+  gap: var(--gap-30);
+  box-shadow: 0 46px 13px transparent, 0 29px 12px transparent,
+    0 17px 10px rgba(0, 0, 0, 0.02), 0 7px 7px rgba(0, 0, 0, 0.03),
+    0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.preorder {
+  align-items: center;
+}
+
+.formSection {
+  align-self: stretch;
+  overflow: hidden;
+  flex-shrink: 0;
+  flex-direction: row;
+  padding: var(--padd-30-50);
+}
+
+.preorder {
+  width: 100%;
+  position: relative;
+  height: 100vh;
+  background-color: var(--theme-blue);
+  overflow-y: auto;
+  flex-direction: column;
+}
