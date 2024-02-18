@@ -124,9 +124,21 @@ export default function Preorder() {
       try {
         setLoading(true);
 
+        const requestBody = {
+          fullName: formData.fullName,
+          phone: formData.phone,
+          email: formData.email,
+          businessEmail: formData.businessEmail,
+          haveWebsite: formData.haveWebsite,
+          haveCatalog: formData.haveCatalog,
+          newDomain: formData.newDomain,
+          oldWebsite: formData.oldWebsite,
+          webLanguage: formData.webLanguage,
+          webBudget: formData.webBudget,
+        };
+
         const response = await axios.post("/api/proxy", {
-          endpoint: "/bdekspor_api/main/addpreorder",
-          formData,
+          ...requestBody,
         });
 
         console.log("Server Response:", response.data);

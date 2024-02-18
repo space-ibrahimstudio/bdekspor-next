@@ -7,7 +7,7 @@ on:
 
 jobs:
   web-deploy:
-    name: Deploy on Main
+    name: Deploy on Master
     runs-on: ubuntu-latest
 
     steps:
