@@ -16,6 +16,12 @@
   }
 }
 
+@media (min-width: 605px) {
+  .formContent {
+    height: var(--pixel-550);
+  }
+}
+
 .formSubtitleText,
 .formTitleText {
   margin: 0;
@@ -96,7 +102,6 @@
 .formContent {
   margin: 0;
   flex: 1;
-  height: var(--pixel-550);
   overflow: hidden;
   flex-direction: column;
   justify-content: flex-start;
