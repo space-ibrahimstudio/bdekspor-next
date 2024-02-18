@@ -213,7 +213,7 @@ export function SmallButton({ type, color, text, onClick }) {
   );
 }
 
-export function PrimButton({ variant, type, color, text, onClick }) {
+export function PrimButton({ variant, type, color, text, loading, onClick }) {
   if (variant === "hollow") {
     if (color === "yellow") {
       return (
@@ -227,7 +227,7 @@ export function PrimButton({ variant, type, color, text, onClick }) {
             className={styles.buttonText}
             style={{ color: "var(--theme-yellow)" }}
           >
-            {text}
+            {loading ? "Please wait ..." : text}
           </b>
         </button>
       );
@@ -244,7 +244,7 @@ export function PrimButton({ variant, type, color, text, onClick }) {
             className={styles.buttonText}
             style={{ color: "var(--theme-white)" }}
           >
-            {text}
+            {loading ? "Please wait ..." : text}
           </b>
         </button>
       );
@@ -261,7 +261,7 @@ export function PrimButton({ variant, type, color, text, onClick }) {
             className={styles.buttonText}
             style={{ color: "var(--theme-bluedark)" }}
           >
-            {text}
+            {loading ? "Please wait ..." : text}
           </b>
         </button>
       );
@@ -274,7 +274,7 @@ export function PrimButton({ variant, type, color, text, onClick }) {
         onClick={onClick}
       >
         <b className={styles.buttonText} style={{ color: "var(--theme-blue)" }}>
-          {text}
+          {loading ? "Please wait ..." : text}
         </b>
       </button>
     );
@@ -296,7 +296,7 @@ export function PrimButton({ variant, type, color, text, onClick }) {
             className={styles.buttonText}
             style={{ color: "var(--theme-yellow)" }}
           >
-            {text}
+            {loading ? "Please wait ..." : text}
           </b>
         </button>
       );
@@ -316,7 +316,7 @@ export function PrimButton({ variant, type, color, text, onClick }) {
             className={styles.buttonText}
             style={{ color: "var(--theme-white)" }}
           >
-            {text}
+            {loading ? "Please wait ..." : text}
           </b>
         </button>
       );
@@ -336,7 +336,7 @@ export function PrimButton({ variant, type, color, text, onClick }) {
             className={styles.buttonText}
             style={{ color: "var(--theme-bluedark)" }}
           >
-            {text}
+            {loading ? "Please wait ..." : text}
           </b>
         </button>
       );
@@ -352,7 +352,7 @@ export function PrimButton({ variant, type, color, text, onClick }) {
         onClick={onClick}
       >
         <b className={styles.buttonText} style={{ color: "var(--theme-blue)" }}>
-          {text}
+          {loading ? "Please wait ..." : text}
         </b>
       </button>
     );
@@ -370,7 +370,7 @@ export function PrimButton({ variant, type, color, text, onClick }) {
           className={styles.buttonText}
           style={{ color: "var(--theme-bluedark)" }}
         >
-          {text}
+          {loading ? "Please wait ..." : text}
         </b>
       </button>
     );
@@ -387,7 +387,7 @@ export function PrimButton({ variant, type, color, text, onClick }) {
           className={styles.buttonText}
           style={{ color: "var(--theme-bluedark)" }}
         >
-          {text}
+          {loading ? "Please wait ..." : text}
         </b>
       </button>
     );
@@ -404,14 +404,14 @@ export function PrimButton({ variant, type, color, text, onClick }) {
           className={styles.buttonText}
           style={{ color: "var(--theme-purewhite)" }}
         >
-          {text}
+          {loading ? "Please wait ..." : text}
         </b>
       </button>
     );
   }
   return (
     <button type={type} className={styles.button} onClick={onClick}>
-      <b className={styles.buttonText}>{text}</b>
+      <b className={styles.buttonText}>{loading ? "Please wait ..." : text}</b>
     </button>
   );
 }
